@@ -1,4 +1,3 @@
-import React from 'react'
 import AddForm from '../../components/AddForm'
 
 function BookAddForm() {
@@ -7,7 +6,7 @@ function BookAddForm() {
       
       <h1>Create a new Book</h1>
     
-      <div>
+      <div style={{display: "flex", justifyContent: "center"}}>
 
         <AddForm />
 

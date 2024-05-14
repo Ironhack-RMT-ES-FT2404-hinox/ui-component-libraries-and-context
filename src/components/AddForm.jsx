@@ -1,27 +1,34 @@
-import React from 'react'
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+
+import { useContext } from 'react';
+import { ThemeContext } from '../context/theme.context';
 
 function AddForm() {
+
+  const { isDarkTheme } = useContext(ThemeContext)
+
   return (
-    <form>
+    <Form style={{width: "400px"}} data-bs-theme={isDarkTheme ? "dark" : "light"}>
       
-      <div>
-        <label htmlFor="title">Title</label>
-        <input type="text" name="title"/>
-      </div>
+      <Form.Group>
+        <Form.Label htmlFor="title">Title</Form.Label>
+        <Form.Control type="text" name="title"/>
+      </Form.Group>
 
-      <div>
-        <label htmlFor="description">Description</label>
-        <input type="text" name="description"/>
-      </div>
+      <Form.Group>
+        <Form.Label htmlFor="description">Description</Form.Label>
+        <Form.Control type="text" name="description"/>
+      </Form.Group>
 
-      <div>
-        <label htmlFor="content">Content</label>
-        <input type="text" name="content"/>
-      </div>
+      <Form.Group>
+        <Form.Label htmlFor="content">Content</Form.Label>
+        <Form.Control type="text" name="content"/>
+      </Form.Group>
 
-      <button>Add new Book</button>
+      <Button variant="success">Add new Book</Button>
 
-    </form>
+    </Form>
   )
 }
 
